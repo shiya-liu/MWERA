@@ -1,1 +1,1 @@
-# MWERA
+# R Markdown Workshop

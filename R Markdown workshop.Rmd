@@ -8,13 +8,11 @@ author:
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    lib_dir: libs
     nature:
-      slideNumberFormat: "%current%"
       highlightStyle: github
       highlightLines: true
-      ratio: 16:9
-      countIncrementalSlides: true
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
@@ -181,6 +179,7 @@ layout: ture
 
 
 --- 
+
 # Code
 ## Inline code
 `r sin(pi)`
@@ -247,7 +246,6 @@ For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html
             \\\#\\\#(hash)
 
         -   Set comment = '' remove the default \\\#\\\#.
----
 
 ```{r comment=''}
  sin(pi/2)
