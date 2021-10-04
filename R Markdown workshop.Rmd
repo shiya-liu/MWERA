@@ -200,6 +200,10 @@ layout: true
 
 ## Inline code
 
+```{r eval=FALSE}
+`r sin(pi/2)`
+```
+
 `r sin(pi/2)`
 
 ```{r}
