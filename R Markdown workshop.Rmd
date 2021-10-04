@@ -216,6 +216,15 @@ The sum is `sum(round(x),2)`.
 
 ### Update the date automatically
 
+
+```{r eval=FALSE}
+ date: "`r Sys.Date()`"
+
+ date: "`r format(Sys.time(), '%d %B, %Y')`" 
+
+ date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+```
+
 date: "`r Sys.Date()`"
 
 date: "`r format(Sys.time(), '%d %B, %Y')`" 
@@ -256,7 +265,13 @@ layout: false
 ```
 
 --
-```{r eval=FALSE}
+````md
+```{r eval=FALSE}`r ''`
+ sin(pi/2)
+```
+````
+
+```{r echo=FALSE}
  sin(pi/2)
 ```
 
@@ -268,13 +283,26 @@ layout: false
 
     -   include= FALSE, run code, but nothing will be written into the
         output document (code and results)
+        
 
-```{r include=TRUE}
- sin(pi/2)
+````md      
+```{r include=FALSE}`r ''`
+ x <- sin(pi/2)
 ```
-      
-```{r include=FALSE}
- sin(pi/2)
+````
+```{r echo=FALSE, include=FALSE}
+ x <- sin(pi/2)
+ x
+```
+
+````md
+```{r}`r ''`
+ x+1
+```
+````
+
+```{r echo=FALSE}
+ x+1
 ```
 
 ---
@@ -292,49 +320,56 @@ layout: false
 ```
 
 --
+````md   
+```{r collapse=TRUE}`r ''`
+ sin(pi/2)
+ cos(pi/2)
+```
+````
+```{r echo=FALSE, collapse=TRUE}
+ sin(pi/2)
+ cos(pi/2)
+```
 
-```{r collapse=TRUE}
+
+---
+
+-   prompt 
+
+    -   Whether to add the prompt characters in the R code
+
+    -   distinguish code and results
+    
+````md
+```{r prompt=TRUE}`r ''`
+ sin(pi/2)
+ cos(pi/2)
+```
+````
+```{r echo=FALSE, prompt=TRUE}
  sin(pi/2)
  cos(pi/2)
 ```
 
 ---
 
--   prompt and comment
-
-    -   prompt
-
-        -   Whether to add the prompt characters in the R code
-
-        -   distinguish code and results
-
-    -   comment
+-   comment
     
-        -   The prefix to be added before each line of the text output
+    -   The prefix to be added before each line of the text output
 
-        -   By default, the text output is commented out by
+    -   By default, the text output is commented out by
             \\\#\\\#(hash)
 
-        -   Set comment = '' remove the default \\\#\\\#.
+    -   Set comment = '' remove the default \\\#\\\#.
         
----
-
-```{r prompt=TRUE}
+````md
+```{r comment=''}`r ''`
  sin(pi/2)
- cos(pi/2)
 ```
+````
 
-
-```{r comment=''}
+```{r echo=FALSE, comment=''}
  sin(pi/2)
- cos(pi/2)
-```
---
-
-```{r prompt=TRUE,comment='',collapse=TRUE}
- sin(pi/2)
- cos(pi/2)
-#distinguish code and results in output text, remove ##, collapse all code and results together  
 ```
 
 ---
@@ -353,6 +388,27 @@ layout: false
         to the end of the chunk.
 
     -   hide (or FALSE): Hide text output
+   
+    
+````md
+```{r, results='asis'}`r ''`
+cat('# This is a header')
+```
+````
+```{r echo=FALSE, results='asis'}
+cat('# This is a header')
+```
+
+````md
+```{r, results='hide'}`r ''`
+print("You will not see the text output.")
+```
+````
+
+```{r echo=FALSE, results='hide'}
+print("You will not see the text output.")
+```
+---
 
 -   warning
 
@@ -363,6 +419,18 @@ layout: false
         the output document
 
     -   hide the results of library a package
+
+````md
+```{r, warning=FALSE}`r ''`
+# this will generate a warning but it will be suppressed
+1:2 + 1:3
+```
+````
+
+```{r echo=FALSE, warning=FALSE}
+# this will generate a warning but it will be suppressed
+1:2 + 1:3
+```
 
 ---
 -   error
@@ -385,18 +453,26 @@ layout: false
 
     -   similar to the option warning
 
----
+````md
+```{r, error=TRUE}`r ''`
+1 + "a"
+```
+````
 
-```{r }
- library(tidyverse)
+```{r echo=FALSE, error=TRUE}
+1 + "a"
 ```
 
-```{r warning = FALSE}
- library(tidyverse)
-```
+--
 
-```{r message = FALSE}
- library(tidyverse)
+````md
+```{r, message=FALSE}`r ''`
+message("You will not see the message.")
+```
+````
+
+```{r echo=FALSE, message=FALSE}
+message("You will not see the message.")
 ```
 
 For more details: [Knitr: Elegant, flexible, and fast dynamic report
@@ -456,6 +532,11 @@ generation with R](https://yihui.org/knitr/options/)
 ---
 
 -   fig.cap: set title
+````md
+```{r out.width="80%", fig.cap="Figure 1", echo = TRUE}`r ''`
+ plot(1:10)
+```
+````
 
 ```{r out.width="80%", fig.cap="Figure 1", echo = TRUE}
  plot(1:10)
@@ -467,6 +548,11 @@ generation with R](https://yihui.org/knitr/options/)
     -   actual output size
     -   50%
 
+````md
+```{r out.width='50%'}`r ''`
+ plot(1:10)
+```
+````
 ```{r out.width='50%'}
  plot(1:10)
 ```
@@ -503,8 +589,8 @@ generation with R](https://yihui.org/knitr/options/)
 ```{r}
  knitr::kable(co,digits = 2, align='c')
 ```
---
-- pander::pander
+
+-  pander::pander
 
 ```{r}
  pander::pander(lmr)
@@ -541,7 +627,7 @@ generation with R](https://yihui.org/knitr/options/)
  kableExtra::kable_styling(table, bootstrap_options = "bordered")
 ```
 
-[bootstrap labels](https://www.w3schools.com/bootstrap/bootstrap_tables.asp)
+**Bootstrap labels** <https://www.w3schools.com/bootstrap/bootstrap_tables.asp>
 ---
 
 - full_width = T/F
