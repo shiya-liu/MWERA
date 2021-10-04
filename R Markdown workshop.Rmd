@@ -152,6 +152,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ---
 
 ### R Studio
+<!--change the picture-->
 ```{r out.width = "90%", echo=FALSE}
  knitr::include_graphics("Figure/18.jpg")
 ```
@@ -400,7 +401,9 @@ layout: false
 
 For more details: [Knitr: Elegant, flexible, and fast dynamic report
 generation with R](https://yihui.org/knitr/options/)
+
 ---
+
 # Figure
 ## Insert Figure
 ### 1. Markdown
@@ -408,6 +411,7 @@ generation with R](https://yihui.org/knitr/options/)
 ![](Figure/4.png)
 
 ---
+
 ## Insert Figure
 ### 2. Knitr::include_graph()
 ```{r out.width ="20%", echo=TRUE}
@@ -415,6 +419,7 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 ---
+
 ## Insert Figure
 ### 3. Source editor
 .pull-left[![](Figure/4.png)]
@@ -476,6 +481,7 @@ generation with R](https://yihui.org/knitr/options/)
 -   out.height:
 
 ---
+
 # Table
 ## Insert table
 ### 1. Markdown
@@ -505,7 +511,7 @@ generation with R](https://yihui.org/knitr/options/)
  knitr::kable(co,digits = 2, align='c')
 ```
 --
--   pander::pander
+- pander::pander
 
 ```{r}
  pander::pander(lmr)
