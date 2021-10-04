@@ -460,13 +460,6 @@ generation with R](https://yihui.org/knitr/options/)
 ```{r out.width="80%", fig.cap="Figure 1", echo = TRUE}
  plot(1:10)
 ```
----
-
--   fig.subcap: set subtitle
-
-```{r out.width="80%", fig.cap="Figure 1", fig.subcap="This is a plot", echo = TRUE}
- plot(1:10)
-```
 
 ---
 -   out.width:
