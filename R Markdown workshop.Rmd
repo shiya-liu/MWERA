@@ -1,10 +1,9 @@
 ---
-title: "R Markdown Workshop"
-subtitle: ""  
+title: "Mid-Western Educational Researcher: R Markdown Workshop"
 author: 
-  - "Shiya Liu"
-  - "Sun Xiaorui"
-  - "Gorden P. Brooks"
+  - "Shiya Liu, Ohio University"
+  - "Sun Xiaorui, Ohio University"
+  - "Gorden P. Brooks, Ohio University"
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
@@ -12,8 +11,10 @@ output:
     nature:
       highlightStyle: github
       highlightLines: true
+      ratio: 16:9
       countIncrementalSlides: false
 ---
+
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -32,6 +33,16 @@ knitr::opts_chunk$set(
 library(xaringanthemer)
 style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ```
+
+# R Markdown Workshop
+<font size="3">The primary purpose of this workshop is to introduce a free authoring framework for data science RMarkdown and to prepare workshop participants to use RMarkdown for teaching and research. </font>
+
+1. <font size="3">Introduction</font>
+2. <font size="3">R Markdown workflow: What and how</font>
+3. <font size="3"> R Markdown content building: code, figure and table</font>
+4. <font size="3">Different themes</font>
+5. <font size="3">Tips</font>
+---
 
 # Introduction
 
@@ -147,6 +158,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 
 ---
 ### Official Website and Relevent Resources
+
 - **Official website** <https://rmarkdown.rstudio.com/index.html>
 
 - **R Markdown Reference Guide** <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
@@ -166,7 +178,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ```
 
 ---
-
+# R Markdown workflow
 ## Build A New File
 
 ```{r out.width = "50%", echo=FALSE}
