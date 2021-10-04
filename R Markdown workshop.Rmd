@@ -313,8 +313,14 @@ layout: false
         blocks from one code chunk into a single block
         
 --
+```md
+```{r}`r ''`
+ sin(pi/2)
+ cos(pi/2)
+```
+````
 
-```{r}
+```{r echo=FALSE}
  sin(pi/2)
  cos(pi/2)
 ```
