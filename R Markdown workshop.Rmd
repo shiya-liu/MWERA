@@ -539,12 +539,12 @@ generation with R](https://yihui.org/knitr/options/)
 
 -   fig.cap: set title
 ````md
-```{r out.width="80%", fig.cap="Figure 1", echo = TRUE}`r ''`
+```{r out.width="80%", fig.cap="Figure 1"}`r ''`
  plot(1:10)
 ```
 ````
 
-```{r out.width="80%", fig.cap="Figure 1", echo = TRUE}
+```{r echo=FALSE, fig.cap="Figure 1", out.width="80%"}
  plot(1:10)
 ```
 
@@ -559,7 +559,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 ````
-```{r out.width='50%'}
+```{r echo=FALSE, out.width='50%'}
  plot(1:10)
 ```
 
