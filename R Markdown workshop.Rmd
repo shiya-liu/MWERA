@@ -621,6 +621,31 @@ output:
   
 ---
 ![](Figure/13.jpg)
+
+---
+
+# Tips
+## Help button
+![](Figure/16.jpg)
+---
+
+## Write personal blog
+
+- **blogdown: Creating Websites with R Markdown**: <https://bookdown.org/yihui/blogdown/>
+
+- Youtube: <https://www.youtube.com/watch?v=ox_Ue9yzf-0>
+
+- **Hugo theme**: <https://hugothemesfree.com/>
+
+- **Hugo acadmic theme demo**: <https://academic-demo.netlify.app/>
+
+## Create slide
+- **xaringan package** : <https://github.com/yihui/xaringan>
+
+- **xaringanthemer package**: <https://github.com/gadenbuie/xaringanthemer>
+
+- **A more exhaustive presentation explaining how to create a xaringan**: <https://yongfu.name/slides/xaringan/xaringan.pdf>
+
 ---
 
 ##  rticles package
@@ -651,31 +676,6 @@ output:
 ---
 
 ![Elseiver](Figure/14.jpg)
-
----
-
-# Tips
-## Help button
-![](Figure/16.jpg)
----
-
-## Write personal blog
-
-- **blogdown: Creating Websites with R Markdown**: <https://bookdown.org/yihui/blogdown/>
-
-- Youtube: <https://www.youtube.com/watch?v=ox_Ue9yzf-0>
-
-- **Hugo theme**: <https://hugothemesfree.com/>
-
-- **Hugo acadmic theme demo**: <https://academic-demo.netlify.app/>
-
-## Create slide
-- **xaringan package** : <https://github.com/yihui/xaringan>
-
-- **xaringanthemer package**: <https://github.com/gadenbuie/xaringanthemer>
-
-- **A more exhaustive presentation explaining how to create a xaringan**: <https://yongfu.name/slides/xaringan/xaringan.pdf>
-
 
 
 
