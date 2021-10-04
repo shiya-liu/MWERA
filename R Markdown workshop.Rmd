@@ -35,16 +35,20 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 
 # Introduction
 
+<font size="6">https://github.com/shiya-liu/MWERA</font>
+
+---
+
 ## Markdown
 
-Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.
+<font size="3">Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.</font>
 
 ### Advantages
-- Markdown can be used for everything. Eg. websites, documents, notes, books, presentations. 
+- <font size="3">Markdown can be used for everything. e.g., websites, documents, notes, books, presentations.</font>
   
-- Markdown is portable.
+- <font size="3">Markdown is portable.</font>
   
-- Markdown is platform independent.
+- <font size="3">Markdown is platform independent.</font>
 
 ---
 
@@ -111,13 +115,12 @@ Markdown is a lightweight markup language that you can use to add formatting ele
 
 ## Introduction to R Markdown
 
-For instructional purposes, R Markdown can create readable and portable PDF and HTML documents for students to use and make notes on devices such as iPad, smartphone. It also can display outputs straightforwardly, and make codes more organized in chunks, modules, etc. For learning purposes, R Markdown is easier to make notes and find bugs. For academic purposes, R Markdown is helpful for reproducible research manuscript, meeting strict guidelines on formatting journal articles and books, communicating with results with others, avoiding human errors, such as when copying output from R Studio to MS Word document, we do not need to worry about the format will be changed.
+<font size="3">For instructional purposes, R Markdown can create readable and portable PDF and HTML documents for students to use and make notes on devices such as iPad, smartphone. It also can display outputs straightforwardly, and make codes more organized in chunks, modules, etc. For learning purposes, R Markdown is easier to make notes and find bugs. For academic purposes, R Markdown is helpful for reproducible research manuscript, meeting strict guidelines on formatting journal articles and books, communicating with results with others, avoiding human errors, such as when copying output from R Studio to MS Word document, we do not need to worry about the format will be changed.</font>
 
 ---
 ## Install
 
 ### Install R and R Studio first
-layout: ture
 
 - **R**: <https://www.r-project.org/>
 
@@ -175,28 +178,34 @@ layout: ture
 ## Format
 
 ![](Figure/2.png)
+---
 
-
-
---- 
+layout: true
 
 # Code
+
+---
+
 ## Inline code
+
 `r sin(pi)`
 
 ```{r}
  x <- rnorm(10)
 ```
 The sum is `sum(round(x),2)`.
+
 ---
 
 ### Update the date automatically
+
 date: "`r Sys.Date()`"
 
 date: "`r format(Sys.time(), '%d %B, %Y')`" 
 
 date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 <!--include some explanatory text along with the date-->
+
 ---
 
 ```{r out.width = "80%", echo=FALSE}
@@ -204,7 +213,10 @@ knitr::include_graphics("Figure/3.png")
 ```
 
 For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html>
+
 ---
+
+layout: false
 
 ## Code Chunk
 
@@ -213,10 +225,25 @@ For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html
 2. Chunk options in chunk headers
 -   default: include source code and text output
 
--   eval and include:
 
--   eval: - Whether to evaluate the code chunk - eval = FALSE, show
-    source code but do not run
+-   eval: 
+
+    - Whether to evaluate the code chunk 
+  
+    - eval = FALSE, show source code but do not run
+    
+--
+
+```{r}
+ sin(pi/2)
+```
+
+--
+```{r eval=FALSE}
+ sin(pi/2)
+```
+
+---
 
 -   include:
 
@@ -224,12 +251,38 @@ For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html
 
     -   include= FALSE, run code, but nothing will be written into the
         output document (code and results)
-        
+
+```{r include=TRUE}
+ sin(pi/2)
+```
+      
+```{r include=FALSE}
+ sin(pi/2)
+```
+
+---
+
 -   collapse:
 
     -   Whether to, if possible, collapse all the source and output
         blocks from one code chunk into a single block
+        
+--
+
+```{r}
+ sin(pi/2)
+ cos(pi/2)
+```
+
+--
+
+```{r collapse=TRUE}
+ sin(pi/2)
+ cos(pi/2)
+```
+
 ---
+
 -   prompt and comment
 
     -   prompt
@@ -237,6 +290,15 @@ For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html
         -   Whether to add the prompt characters in the R code
 
         -   distinguish code and results
+
+--
+
+```{r prompt=TRUE}
+ sin(pi/2)
+ cos(pi/2)
+```
+
+---
 
     -   comment
 
@@ -246,18 +308,22 @@ For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html
             \\\#\\\#(hash)
 
         -   Set comment = '' remove the default \\\#\\\#.
+--
 
 ```{r comment=''}
  sin(pi/2)
  cos(pi/2)
 ```
 --
+
 ```{r prompt=TRUE,comment='',collapse=TRUE}
  sin(pi/2)
  cos(pi/2)
 #distinguish code and results in output text, remove ##, collapse all code and results together  
 ```
+
 ---
+
 -   result
 
     -   Controls how to display the text results
@@ -303,7 +369,13 @@ For more detail: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html
     -   Whether to preserve messages emitted by message()
 
     -   similar to the option warning
-    
+
+---
+
+```{r }
+ library(tidyverse)
+```
+
 ```{r warning = FALSE}
  library(tidyverse)
 ```
@@ -324,8 +396,8 @@ generation with R](https://yihui.org/knitr/options/)
 ---
 ## Insert Figure
 ### 2. Knitr::include_graph()
-```{r out.width ="50%", echo=TRUE}
- knitr::include_graphics("D:\\Courses\\2021 spring\\Computer programming in EDRE\\R\\EDRE 7610\\R Markdown\\Figure\\4.png")
+```{r out.width ="20%", echo=TRUE}
+ knitr::include_graphics("Figure/4.png")
 ```
 
 ---
@@ -351,7 +423,7 @@ generation with R](https://yihui.org/knitr/options/)
 
     -   animate: use the animate package to create the animation
 
-        -   (<https://bookdown.org/yihui/rmarkdown-cookbook/animation.html>)
+        -   <https://bookdown.org/yihui/rmarkdown-cookbook/animation.html>
 
     -   hide: hides the plot
 
@@ -360,6 +432,7 @@ generation with R](https://yihui.org/knitr/options/)
 -   fig.height: for R-generated figures only
 
 -   fig. align:
+
     -   center, right, left
 ---
 
@@ -393,10 +466,10 @@ generation with R](https://yihui.org/knitr/options/)
 ## Insert table
 ### 1. Markdown
  
-    | x   | y   |
-    |-----|-----|
-    | 1   | 2   |
-    | 3   | 4   |
+  | x    | y    |
+  |------|------|
+  | 1    | 2    |
+  | 3    | 4    |
 ---
 ## Insert table
 ### 2. Source editor
@@ -405,12 +478,13 @@ generation with R](https://yihui.org/knitr/options/)
 ---
 
 ## R-generated table
-```{r}
+```{r comment=''}
  x <- 1:10; y <- x^2; lmr <- lm(y ~ x) #linear regression
  co <- summary(lmr)$coefficients
  print(co)
 ```
 ---
+
 - knitr::kable
 
 ```{r}
@@ -422,7 +496,9 @@ generation with R](https://yihui.org/knitr/options/)
 ```{r}
  pander::pander(lmr)
 ```
+
 ---
+
 - Other packages
   - tables()
   
@@ -441,7 +517,9 @@ generation with R](https://yihui.org/knitr/options/)
  kable(iris) %>%
   kable_styling(latex_options = "striped")
 ```
+
 ---
+
 ### kableExtra
 #### Options
 - bootstrap_options = "bordered/stripped/hover/condensed"
@@ -469,6 +547,7 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 ---
+
 - position = "left/right/center/float_left/float_righ"
 
 ```{r}
@@ -478,6 +557,7 @@ generation with R](https://yihui.org/knitr/options/)
                            position = "left")
 ```
 ---
+
 - font_size
 
 ```{r}
@@ -487,6 +567,7 @@ generation with R](https://yihui.org/knitr/options/)
                            font_size = 24)
 ```
 ---
+
 - column_spec() & row_spec()
 ```{r}
  t2<- kableExtra::kable_styling(t2, bootstrap_options = "striped", full_width = T) 
@@ -504,6 +585,7 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 ---
+
 ### Other packages
 ```{r include=FALSE}
  data <- plyr::mutate(rock[1:10, ], 
@@ -530,7 +612,9 @@ generation with R](https://yihui.org/knitr/options/)
    row_spec(0,color = "black",background = "#696969") %>%
    kable_styling("striped")
 ```
+
 ---
+
 ### Relevent resources
 -   **kableExtra**: <https://haozhu233.github.io/kableExtra/>
 
@@ -564,9 +648,12 @@ output:
     
     
 ---
+
 .pull-left[![](figure/8.jpg)] 
 .pull-right[![](Figure/9.jpg)]
+
 ---
+
 
 ## prettydoc package
 title: "R Markdown Workshop"

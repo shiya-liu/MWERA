@@ -219,10 +219,31 @@ layout: false
 2. Chunk options in chunk headers
 -   default: include source code and text output
 
--   eval and include:
 
--   eval: - Whether to evaluate the code chunk - eval = FALSE, show
-    source code but do not run
+-   eval: 
+
+    - Whether to evaluate the code chunk 
+  
+    - eval = FALSE, show source code but do not run
+    
+--
+
+
+```r
+ sin(pi/2)
+```
+
+```
+## [1] 1
+```
+
+--
+
+```r
+ sin(pi/2)
+```
+
+---
 
 -   include:
 
@@ -230,12 +251,56 @@ layout: false
 
     -   include= FALSE, run code, but nothing will be written into the
         output document (code and results)
-        
+
+
+```r
+ sin(pi/2)
+```
+
+```
+## [1] 1
+```
+      
+
+
+---
+
 -   collapse:
 
     -   Whether to, if possible, collapse all the source and output
         blocks from one code chunk into a single block
+        
+--
+
+
+```r
+ sin(pi/2)
+```
+
+```
+## [1] 1
+```
+
+```r
+ cos(pi/2)
+```
+
+```
+## [1] 6.123032e-17
+```
+
+--
+
+
+```r
+ sin(pi/2)
+## [1] 1
+ cos(pi/2)
+## [1] 6.123032e-17
+```
+
 ---
+
 -   prompt and comment
 
     -   prompt
@@ -243,6 +308,27 @@ layout: false
         -   Whether to add the prompt characters in the R code
 
         -   distinguish code and results
+
+--
+
+
+```r
+&gt;  sin(pi/2)
+```
+
+```
+## [1] 1
+```
+
+```r
+&gt;  cos(pi/2)
+```
+
+```
+## [1] 6.123032e-17
+```
+
+---
 
     -   comment
 
@@ -252,6 +338,7 @@ layout: false
             \\\#\\\#(hash)
 
         -   Set comment = '' remove the default \\\#\\\#.
+--
 
 
 ```r
@@ -271,6 +358,7 @@ layout: false
 ```
 --
 
+
 ```r
 &gt;  sin(pi/2)
 [1] 1
@@ -278,7 +366,9 @@ layout: false
 [1] 6.123032e-17
 &gt; #distinguish code and results in output text, remove ##, collapse all code and results together  
 ```
+
 ---
+
 -   result
 
     -   Controls how to display the text results
@@ -324,7 +414,14 @@ layout: false
     -   Whether to preserve messages emitted by message()
 
     -   similar to the option warning
-    
+
+---
+
+
+```r
+ library(tidyverse)
+```
+
 
 ```r
  library(tidyverse)
@@ -349,10 +446,10 @@ generation with R](https://yihui.org/knitr/options/)
 ### 2. Knitr::include_graph()
 
 ```r
- knitr::include_graphics("D:\\Courses\\2021 spring\\Computer programming in EDRE\\R\\EDRE 7610\\R Markdown\\Figure\\4.png")
+ knitr::include_graphics("Figure/4.png")
 ```
 
-&lt;img src="D:\Courses\2021 spring\Computer programming in EDRE\R\EDRE 7610\R Markdown\Figure\4.png" width="50%" /&gt;
+&lt;img src="Figure/4.png" width="20%" /&gt;
 
 ---
 ## Insert Figure
@@ -368,7 +465,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-12-1.png" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-20-1.png" width="80%" /&gt;
 
 ---
 ### Options
@@ -400,7 +497,7 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 &lt;div class="figure"&gt;
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-13-1.png" alt="Figure 1" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-21-1.png" alt="Figure 1" width="80%" /&gt;
 &lt;p class="caption"&gt;Figure 1&lt;/p&gt;
 &lt;/div&gt;
 ---
@@ -413,7 +510,7 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 &lt;div class="figure"&gt;
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-14-1.png" alt="Figure 1" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-22-1.png" alt="Figure 1" width="80%" /&gt;
 &lt;p class="caption"&gt;Figure 1&lt;/p&gt;
 &lt;/div&gt;
 
@@ -428,7 +525,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-15-1.png" width="50%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-23-1.png" width="50%" /&gt;
 
 -   out.height:
 
@@ -437,10 +534,10 @@ generation with R](https://yihui.org/knitr/options/)
 ## Insert table
 ### 1. Markdown
  
-    | x   | y   |
-    |-----|-----|
-    | 1   | 2   |
-    | 3   | 4   |
+  | x    | y    |
+  |------|------|
+  | 1    | 2    |
+  | 3    | 4    |
 ---
 ## Insert table
 ### 2. Source editor
@@ -457,11 +554,12 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 ```
-##             Estimate Std. Error   t value     Pr(&gt;|t|)
-## (Intercept)      -22  5.5497748 -3.964125 4.152962e-03
-## x                 11  0.8944272 12.298374 1.777539e-06
+            Estimate Std. Error   t value     Pr(&gt;|t|)
+(Intercept)      -22  5.5497748 -3.964125 4.152962e-03
+x                 11  0.8944272 12.298374 1.777539e-06
 ```
 ---
+
 - knitr::kable
 
 
@@ -514,7 +612,9 @@ generation with R](https://yihui.org/knitr/options/)
 ---------------------------------------------------------------
 
 Table: Fitting linear model: y ~ x
+
 ---
+
 - Other packages
   - tables()
   
@@ -1598,7 +1698,9 @@ Table: Fitting linear model: y ~ x
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 ---
+
 ### kableExtra
 #### Options
 - bootstrap_options = "bordered/stripped/hover/condensed"
@@ -1734,6 +1836,7 @@ Table: Fitting linear model: y ~ x
 &lt;/table&gt;
 
 ---
+
 - position = "left/right/center/float_left/float_righ"
 
 
@@ -1793,6 +1896,7 @@ Table: Fitting linear model: y ~ x
 &lt;/tbody&gt;
 &lt;/table&gt;
 ---
+
 - font_size
 
 
@@ -1852,6 +1956,7 @@ Table: Fitting linear model: y ~ x
 &lt;/tbody&gt;
 &lt;/table&gt;
 ---
+
 - column_spec() &amp; row_spec()
 
 ```r
@@ -1972,6 +2077,7 @@ Table: Fitting linear model: y ~ x
 &lt;/table&gt;
 
 ---
+
 ### Other packages
 
 
@@ -2054,7 +2160,9 @@ Table: Fitting linear model: y ~ x
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 ---
+
 ### Relevent resources
 -   **kableExtra**: &lt;https://haozhu233.github.io/kableExtra/&gt;
 
@@ -2088,9 +2196,12 @@ output:
     
     
 ---
+
 .pull-left[![](figure/8.jpg)] 
 .pull-right[![](Figure/9.jpg)]
+
 ---
+
 
 ## prettydoc package
 title: "R Markdown Workshop"

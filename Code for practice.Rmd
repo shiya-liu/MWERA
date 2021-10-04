@@ -12,4 +12,245 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Install R Markdown package
 
+```{r eval=FALSE}
+ # Install from CRAN
+ install.packages('rmarkdown')
+
+# Or if you want to test the development version, install from GitHub
+ if (!requireNamespace("devtools"))
+ install.packages('devtools')
+ devtools::install_github('rstudio/rmarkdown')
+```
+
+# Package needed
+
+```{r message = FALSE}
+ # install.packages("pacman")
+ library(pacman)
+ p_load(rmarkdown,tidyverse,rticles,tinytex,bookdown,knitr,pander,kableExtra,rmdformats,prettydoc, tufte)
+```
+
+# Code
+
+## Inline code
+
+`r sin(pi)`
+
+```{r}
+ x <- rnorm(10)
+```
+
+The sum is `sum(round(x),2)`.
+
+### Update the date automatically
+
+date: "`r Sys.Date()`"
+
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+
+## Code chunk
+
+```{r}
+ sin(pi/2)
+```
+
+```{r eval=FALSE}
+ sin(pi/2)
+```
+
+```{r include=FALSE}
+ sin(pi/2)
+```
+
+```{r}
+ sin(pi/2)
+ cos(pi/2)
+```
+
+```{r collapse=TRUE}
+ sin(pi/2)
+ cos(pi/2)
+```
+
+```{r prompt=TRUE}
+ sin(pi/2)
+ cos(pi/2)
+```
+
+```{r comment=''}
+ sin(pi/2)
+ cos(pi/2)
+```
+
+```{r warning = FALSE}
+ library(tidyverse)
+```
+
+```{r message = FALSE}
+ library(tidyverse)
+```
+
+# Figure
+
+## Insert figure
+
+1.  Markdown
+
+![](Figure/4.png)
+
+```{r}
+ path <- file.choose()
+```
+
+![](path)
+
+2.  knitr::include_graph()
+
+```{r out.width ="50%", echo=TRUE}
+ knitr::include_graphics(path)
+```
+
+## R-generated figure
+
+```{r}
+ plot(1:10)
+```
+
+```{r out.width="80%", fig.cap="Figure 1", echo = TRUE}
+ plot(1:10)
+```
+
+```{r out.width='50%'}
+ plot(1:10)
+```
+
+# Table
+
+## Insert table
+
+### 1. Markdown
+
+  | x   | y   |
+  |-----|-----|
+  | 1   | 2   |
+  | 3   | 4   |
+
+| x   | y   |
+|-----|-----|
+| 1   | 2   |
+| 3   | 4   |
+
+## R-generated table
+
+```{r}
+ x <- 1:10; y <- x^2; lmr <- lm(y ~ x) #linear regression
+ co <- summary(lmr)$coefficients
+ print(co)
+```
+
+-   knitr::kable
+
+```{r}
+ knitr::kable(co,digits = 2, align='c')
+```
+
+-   pander::pander
+
+```{r}
+ pander::pander(lmr)
+```
+
+## Construct Complex table
+
+### kableExtra
+
+```{r}
+ kable(iris) %>%
+  kable_styling(latex_options = "striped")
+```
+
+### kableExtra
+
+#### Options
+
+-   bootstrap_options = "bordered/stripped/hover/condensed"
+
+```{r}
+ table <- knitr::kable(co,digits = 2, align='c')
+ kableExtra::kable_styling(table, bootstrap_options = "bordered")
+```
+
+-   full_width = T/F
+
+```{r}
+ t1 <- knitr::kable(co,digits = 2, align='c')
+ kableExtra::kable_styling(t1, bootstrap_options = "bordered", full_width = F)
+```
+
+```{r}
+# Use pipe
+ kable(head(rock), "html") %>%
+  kable_styling(table,bootstrap_options = "striped", full_width = F)
+```
+
+-   position = "left/right/center/float_left/float_righ"
+
+```{r}
+ t2 <- knitr:: kable(head(rock), "html")
+ kableExtra::kable_styling(t2,bootstrap_options = "striped", 
+                           full_width = F, 
+                           position = "left")
+```
+
+```{r}
+ kableExtra::kable_styling(t2,bootstrap_options = "striped", 
+                           full_width = F, 
+                           position = "left", 
+                           font_size = 24)
+```
+
+-   column_spec() & row_spec()
+
+```{r}
+ t2<- kableExtra::kable_styling(t2, bootstrap_options = "striped", full_width = T) 
+ t2%>%
+   column_spec(1:2, bold = T, color = "black", background = "white")
+# bold: T/F value or vector to control whether the text of the selected column need to be bolded.
+```
+
+-   column_spec() & row_spec()
+
+```{r}
+ t2 %>% 
+  row_spec(1:2,bold = T, color = "black", background = "white")
+```
+
+```{r include=FALSE}
+ data <- plyr::mutate(rock[1:10, ], 
+                     perm = cell_spec(perm,"html",
+                                      color = "white", 
+                                      bold = T, 
+                                      background = spec_color(1:10, 
+                                                              end = 0.9, 
+                                                              option = "A", 
+                                                              direction = -1)), 
+                     shape = ifelse(shape > 0.15, 
+                                    cell_spec(shape, "html", 
+                                              color = "white", 
+                                              background = "#D7261E", 
+                                              bold = T), 
+                                    cell_spec(shape, "html", 
+                                              color = "green", 
+                                              bold = T)))
+ data
+```
+
+```{r }
+  kable(data, "html",escape = F, align = "c") %>%
+   row_spec(0,color = "black",background = "#696969") %>%
+   kable_styling("striped")
+```
