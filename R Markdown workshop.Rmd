@@ -35,7 +35,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 
 # Introduction
 
-<font size="6">https://github.com/shiya-liu/MWERA</font>
+<font size="5">https://github.com/shiya-liu/MWERA</font>
 
 ---
 
@@ -291,24 +291,22 @@ layout: false
 
         -   distinguish code and results
 
---
-
-```{r prompt=TRUE}
- sin(pi/2)
- cos(pi/2)
-```
-
----
-
     -   comment
-
+    
         -   The prefix to be added before each line of the text output
 
         -   By default, the text output is commented out by
             \\\#\\\#(hash)
 
         -   Set comment = '' remove the default \\\#\\\#.
---
+        
+---
+
+```{r prompt=TRUE}
+ sin(pi/2)
+ cos(pi/2)
+```
+
 
 ```{r comment=''}
  sin(pi/2)
