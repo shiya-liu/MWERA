@@ -200,7 +200,7 @@ layout: true
 
 ## Inline code
 
-`r sin(pi)`
+`r sin(pi/2)`
 
 ```{r}
  x <- rnorm(10)
