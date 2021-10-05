@@ -172,7 +172,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 
 ### Package Needed
 ```{r message = FALSE}
- # install.packages("pacman")
+# install.packages("pacman")
  library(pacman)
  p_load(rmarkdown,tidyverse,rticles,tinytex,bookdown,knitr,pander,kableExtra,rmdformats,prettydoc, tufte)
 ```
@@ -190,6 +190,12 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ## Format
 
 ![](Figure/2.png)
+---
+![](Figure/19.jpg)
+
+---
+## R Studio
+![](Figure/20.jpg)
 ---
 
 layout: true
