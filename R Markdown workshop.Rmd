@@ -213,8 +213,11 @@ layout: true
 `r sin(pi/2)`
 
 ```{r}
+ set.seed(1804)
  x <- rnorm(10)
+ sum(round(x),2)
 ```
+
 The sum is `r sum(round(x),2)`.
 
 ---
