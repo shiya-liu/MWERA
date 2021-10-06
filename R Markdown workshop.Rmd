@@ -35,7 +35,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ```
 
 # R Markdown Workshop
-<font size="3">The primary purpose of this workshop is to introduce a free authoring framework for data science R Markdown and to prepare workshop participants to use R Markdown for teaching and research. </font>
+<font size="3">The primary purpose of this workshop is to introduce a free authoring framework for data science—R Markdown and to prepare workshop participants to use R Markdown for teaching and research. </font>
 
 - <font size="3"> Introduction</font>
 
