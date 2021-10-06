@@ -37,11 +37,19 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 # R Markdown Workshop
 <font size="3">The primary purpose of this workshop is to introduce a free authoring framework for data science RMarkdown and to prepare workshop participants to use RMarkdown for teaching and research. </font>
 
-1. <font size="3">Introduction</font>
-2. <font size="3">R Markdown workflow: What and how</font>
-3. <font size="3"> R Markdown content building: code, figure and table</font>
-4. <font size="3">Different themes</font>
-5. <font size="3">Tips</font>
+- <font size="3">Introduction</font>
+
+
+- <font size="3">R Markdown workflow: What and how</font>
+
+
+- <font size="3"> R Markdown content building: code, figure and table</font>
+
+
+- <font size="3">Different themes</font>
+
+
+- <font size="3">Tips</font>
 ---
 
 # Introduction
@@ -55,9 +63,12 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 <font size="3">Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. Created by John Gruber in 2004, Markdown is now one of the world’s most popular markup languages.</font>
 
 ### Advantages
+
 - <font size="3">Markdown can be used for everything. e.g., websites, documents, notes, books, presentations.</font>
+
   
 - <font size="3">Markdown is portable.</font>
+
   
 - <font size="3">Markdown is platform independent.</font>
 
@@ -126,7 +137,14 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 
 ## Introduction to R Markdown
 
-<font size="3">For instructional purposes, R Markdown can create readable and portable PDF and HTML documents for students to use and make notes on devices such as iPad, smartphone. It also can display outputs straightforwardly, and make codes more organized in chunks, modules, etc. For learning purposes, R Markdown is easier to make notes and find bugs. For academic purposes, R Markdown is helpful for reproducible research manuscript, meeting strict guidelines on formatting journal articles and books, communicating with results with others, avoiding human errors, such as when copying output from R Studio to MS Word document, we do not need to worry about the format will be changed.</font>
+- <font size="3"> Save and execute code </font>
+
+
+- <font size="3"> Generate high quality and reproducible reports</font>
+
+
+- <font size="3"> Build many formats. e.g. html, pdf, word documents, slide shows, dashboard, books, websites, etc. </font>
+
 
 ---
 ## Install
@@ -903,7 +921,7 @@ output:
     -   Springer journal submissions
     
 ---
-.pull-left[![](figure/10.jpg)] 
+.pull-left[![](figure/10.jpg)]  
 .pull-right[![](Figure/15.jpg)]
 ---
 
