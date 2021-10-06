@@ -244,7 +244,7 @@ date: "Last compiled on 05 October, 2021"
 
 ---
 
-&lt;img src="Figure/3.png" width="80%" /&gt;
+&lt;img src="Figure/3.png" width="60%" /&gt;
 
 For more detail: &lt;https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html&gt;
 
@@ -285,8 +285,8 @@ layout: false
 ````
 
 
-```
-## [1] 1
+```r
+ sin(pi/2)
 ```
 
 ---
@@ -315,6 +315,24 @@ layout: false
 
 ```
 ## [1] 2
+```
+
+---
+-     echo:
+
+    - Whether to display the source code in the output document
+    - echo = false: show output only
+
+--
+
+````md      
+```{r echo=FALSE}
+ sin(pi/2)
+```
+````
+
+```
+## [1] 1
 ```
 
 ---
@@ -378,8 +396,16 @@ layout: false
 ```
 ````
 
+```r
+&gt;  sin(pi/2)
+```
+
 ```
 ## [1] 1
+```
+
+```r
+&gt;  cos(pi/2)
 ```
 
 ```
@@ -392,10 +418,9 @@ layout: false
     
     -   The prefix to be added before each line of the text output
 
-    -   By default, the text output is commented out by
-            \\\#\\\#(hash)
+    -   By default, the text output is commented out by ##
 
-    -   Set comment = '' remove the default \\\#\\\#.
+    -   Set comment = '' remove the default ##.
         
 ````md
 ```{r comment=''}
@@ -403,6 +428,10 @@ layout: false
 ```
 ````
 
+
+```r
+ sin(pi/2)
+```
 
 ```
 [1] 1
@@ -420,8 +449,7 @@ layout: false
     -   asis: write the raw text results directly into the output
         document without any markups.
 
-    -   hold: Hold all pieces of text output in a chunk and flush them
-        to the end of the chunk.
+    -   hold: Hold all pieces of text output in a chunk and flush them to the end of the chunk.
 
     -   hide (or FALSE): Hide text output
    
@@ -440,6 +468,9 @@ print("You will not see the text output.")
 ````
 
 
+```r
+print("You will not see the text output.")
+```
 ---
 
 -   warning
@@ -506,6 +537,10 @@ message("You will not see the message.")
 
 
 
+---
+
+![](Figure/21.jpg)
+
 For more details: [Knitr: Elegant, flexible, and fast dynamic report
 generation with R](https://yihui.org/knitr/options/)
 
@@ -543,7 +578,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-23-1.png" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-24-1.png" width="80%" /&gt;
 
 ---
 ### Options
@@ -576,7 +611,7 @@ generation with R](https://yihui.org/knitr/options/)
 ````
 
 &lt;div class="figure"&gt;
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-24-1.png" alt="Figure 1" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-25-1.png" alt="Figure 1" width="80%" /&gt;
 &lt;p class="caption"&gt;Figure 1&lt;/p&gt;
 &lt;/div&gt;
 
@@ -591,7 +626,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 ````
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-25-1.png" width="50%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-26-1.png" width="50%" /&gt;
 
 -   out.height:
 
