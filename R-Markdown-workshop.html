@@ -550,18 +550,21 @@ generation with R](https://yihui.org/knitr/options/)
 ## Insert Figure
 ### 1. Markdown
 
-![](Figure/4.png)
-
+```r
+![caption](path/to/image)
+![my figure](Figure/R Studio.jpg)
+```
+![my figure](Figure/R Studio.jpg)
 ---
 
 ## Insert Figure
 ### 2. Knitr::include_graph()
 
 ```r
- knitr::include_graphics("Figure/4.png")
+ knitr::include_graphics("Figure/R Studio.jpg")
 ```
 
-&lt;img src="Figure/4.png" width="20%" /&gt;
+&lt;img src="Figure/R Studio.jpg" width="20%" /&gt;
 
 ---
 
@@ -578,7 +581,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-24-1.png" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-25-1.png" width="80%" /&gt;
 
 ---
 ### Options
@@ -594,9 +597,10 @@ generation with R](https://yihui.org/knitr/options/)
 
     -   hide: hides the plot
 
--   fig.width: for R-generated figures only
+-   fig.width and fig.height:
 
--   fig.height: for R-generated figures only
+    -   for R-generated figures only
+    -   width and height of the plot
 
 -   fig. align:
 
@@ -611,30 +615,37 @@ generation with R](https://yihui.org/knitr/options/)
 ````
 
 &lt;div class="figure"&gt;
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-25-1.png" alt="Figure 1" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-26-1.png" alt="Figure 1" width="80%" /&gt;
 &lt;p class="caption"&gt;Figure 1&lt;/p&gt;
 &lt;/div&gt;
 
 ---
--   out.width:
+-   out.width and out.height:
 
-    -   actual output size
-    -   50%
+    -   width and height of the actual size of the plot in the output document
+    -   different from the fig.width and fig.height
 
 ````md
 ```{r out.width='50%'}
  plot(1:10)
 ```
 ````
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-26-1.png" width="50%" /&gt;
-
--   out.height:
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-27-1.png" width="50%" /&gt;
 
 ---
 
 # Table
 ## Insert table
 ### 1. Markdown
+
+
+```r
+  | x    | y    |
+  |------|------|
+  | 1    | 2    |
+  | 3    | 4    |
+```
+
  
   | x    | y    |
   |------|------|
@@ -2178,14 +2189,35 @@ Table: Fitting linear model: y ~ x
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
 ---
 
 ### Other packages
 
+```r
+ data &lt;- plyr::mutate(rock[1:10, ], 
+                     perm = cell_spec(perm,"html",
+                                      color = "white", 
+                                      bold = T, 
+                                      background = spec_color(1:10, 
+                                                              end = 0.9, 
+                                                              option = "A", 
+                                                              direction = -1)), 
+                     shape = ifelse(shape &gt; 0.15, 
+                                    cell_spec(shape, "html", 
+                                              color = "white", 
+                                              background = "#D7261E", 
+                                              bold = T), 
+                                    cell_spec(shape, "html", 
+                                              color = "green", 
+                                              bold = T)))
+```
+
+---
 
 
 ```r
-  kable(data, "html",escape = F, align = "c") %&gt;%
+ kable(data, "html",escape = F, align = "c") %&gt;%
    row_spec(0,color = "black",background = "#696969") %&gt;%
    kable_styling("striped")
 ```
@@ -2314,11 +2346,11 @@ date: "2021-10-05"
 
 output:
 
-  prettydoc::html_pretty:
+    prettydoc::html_pretty:
   
-  theme: cayman
+    theme: cayman
   
-  highlight: github
+    highlight: github
   
 ---
 
@@ -2334,7 +2366,7 @@ date: "2021-10-05"
 
 output:
 
- tufte::tufte_html: default
+    tufte::tufte_html: default
 
 ---
 

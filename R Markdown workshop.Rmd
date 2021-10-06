@@ -516,15 +516,17 @@ generation with R](https://yihui.org/knitr/options/)
 # Figure
 ## Insert Figure
 ### 1. Markdown
-
-![](Figure/4.png)
-
+```{r eval=FALSE}
+![caption](path/to/image)
+![my figure](Figure/R Studio.jpg)
+```
+![my figure](Figure/R Studio.jpg)
 ---
 
 ## Insert Figure
 ### 2. Knitr::include_graph()
 ```{r out.width ="20%", echo=TRUE}
- knitr::include_graphics("Figure/4.png")
+ knitr::include_graphics("Figure/R Studio.jpg")
 ```
 
 ---
@@ -555,9 +557,10 @@ generation with R](https://yihui.org/knitr/options/)
 
     -   hide: hides the plot
 
--   fig.width: for R-generated figures only
+-   fig.width and fig.height:
 
--   fig.height: for R-generated figures only
+    -   for R-generated figures only
+    -   width and height of the plot
 
 -   fig. align:
 
@@ -576,10 +579,10 @@ generation with R](https://yihui.org/knitr/options/)
 ```
 
 ---
--   out.width:
+-   out.width and out.height:
 
-    -   actual output size
-    -   50%
+    -   width and height of the actual size of the plot in the output document
+    -   different from the fig.width and fig.height
 
 ````md
 ```{r out.width='50%'}`r ''`
@@ -590,13 +593,19 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 
--   out.height:
-
 ---
 
 # Table
 ## Insert table
 ### 1. Markdown
+
+```{r eval=FALSE}
+  | x    | y    |
+  |------|------|
+  | 1    | 2    |
+  | 3    | 4    |
+```
+
  
   | x    | y    |
   |------|------|
@@ -716,10 +725,11 @@ generation with R](https://yihui.org/knitr/options/)
   row_spec(1:2,bold = T, color = "black", background = "white")
 ```
 
+
 ---
 
 ### Other packages
-```{r include=FALSE}
+```{r}
  data <- plyr::mutate(rock[1:10, ], 
                      perm = cell_spec(perm,"html",
                                       color = "white", 
@@ -736,11 +746,13 @@ generation with R](https://yihui.org/knitr/options/)
                                     cell_spec(shape, "html", 
                                               color = "green", 
                                               bold = T)))
- data
+
 ```
 
-```{r }
-  kable(data, "html",escape = F, align = "c") %>%
+---
+
+```{r}
+ kable(data, "html",escape = F, align = "c") %>%
    row_spec(0,color = "black",background = "#696969") %>%
    kable_styling("striped")
 ```
@@ -796,11 +808,11 @@ date: "`r Sys.Date()`"
 
 output:
 
-  prettydoc::html_pretty:
+    prettydoc::html_pretty:
   
-  theme: cayman
+    theme: cayman
   
-  highlight: github
+    highlight: github
   
 ---
 
@@ -816,7 +828,7 @@ date: "`r Sys.Date()`"
 
 output:
 
- tufte::tufte_html: default
+    tufte::tufte_html: default
 
 ---
 
