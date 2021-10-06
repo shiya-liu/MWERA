@@ -35,21 +35,21 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ```
 
 # R Markdown Workshop
-<font size="3">The primary purpose of this workshop is to introduce a free authoring framework for data science RMarkdown and to prepare workshop participants to use RMarkdown for teaching and research. </font>
+<font size="3">The primary purpose of this workshop is to introduce a free authoring framework for data science R Markdown and to prepare workshop participants to use R Markdown for teaching and research. </font>
 
-- <font size="3">Introduction</font>
+- <font size="3"> Introduction</font>
 
 
-- <font size="3">R Markdown workflow: What and how</font>
+- <font size="3"> R Markdown workflow: What and how</font>
 
 
 - <font size="3"> R Markdown content building: code, figure and table</font>
 
 
-- <font size="3">Different themes</font>
+- <font size="3"> Different themes</font>
 
 
-- <font size="3">Tips</font>
+- <font size="3"> Extensions </font>
 ---
 
 # Introduction
@@ -874,7 +874,7 @@ output:
 
 ---
 
-# Tips
+# Extensions
 ## Help button
 ![](Figure/16.jpg)
 ---
