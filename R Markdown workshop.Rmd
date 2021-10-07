@@ -244,6 +244,9 @@ layout: true
  x <- rnorm(10)
  sum(round(x),2)
 ```
+```{r eval=FALSE}
+ The sum is `r sum(round(x),2)`.
+```
 
 The sum is `r sum(round(x),2)`.
 
@@ -344,6 +347,7 @@ layout: false
 -     echo:
 
     - Whether to display the source code in the output document
+    
     - echo = false: show output only
 
 --
@@ -587,6 +591,7 @@ generation with R](https://yihui.org/knitr/options/)
 -   fig.width and fig.height:
 
     -   for R-generated figures only
+    
     -   width and height of the plot
 
 -   fig. align:
@@ -609,6 +614,7 @@ generation with R](https://yihui.org/knitr/options/)
 -   out.width and out.height:
 
     -   width and height of the actual size of the plot in the output document
+    
     -   different from the fig.width and fig.height
 
 ````md
@@ -896,10 +902,14 @@ output:
 
 - **Hugo theme**: <https://hugothemesfree.com/>
 
-- **Hugo acadmic theme demo**: <https://academic-demo.netlify.app/>
+- **Hugo academic theme demo**: <https://academic-demo.netlify.app/>
 
 ## Create slide
-- **xaringan package** : <https://github.com/yihui/xaringan>
+- **xaringan package** :
+
+  -   <https://slides.yihui.org/xaringan/#1>
+  
+  -   <https://github.com/yihui/xaringan>
 
 - **xaringanthemer package**: <https://github.com/gadenbuie/xaringanthemer>
 

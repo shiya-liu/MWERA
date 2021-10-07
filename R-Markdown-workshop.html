@@ -246,6 +246,10 @@ layout: true
 ## [1] 2
 ```
 
+```r
+ The sum is `r sum(round(x),2)`.
+```
+
 The sum is 2.
 
 ---
@@ -348,6 +352,7 @@ layout: false
 -     echo:
 
     - Whether to display the source code in the output document
+    
     - echo = false: show output only
 
 --
@@ -608,7 +613,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-25-1.png" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-26-1.png" width="80%" /&gt;
 
 ---
 ### Options
@@ -627,6 +632,7 @@ generation with R](https://yihui.org/knitr/options/)
 -   fig.width and fig.height:
 
     -   for R-generated figures only
+    
     -   width and height of the plot
 
 -   fig. align:
@@ -642,7 +648,7 @@ generation with R](https://yihui.org/knitr/options/)
 ````
 
 &lt;div class="figure"&gt;
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-26-1.png" alt="Figure 1" width="80%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-27-1.png" alt="Figure 1" width="80%" /&gt;
 &lt;p class="caption"&gt;Figure 1&lt;/p&gt;
 &lt;/div&gt;
 
@@ -650,6 +656,7 @@ generation with R](https://yihui.org/knitr/options/)
 -   out.width and out.height:
 
     -   width and height of the actual size of the plot in the output document
+    
     -   different from the fig.width and fig.height
 
 ````md
@@ -657,7 +664,7 @@ generation with R](https://yihui.org/knitr/options/)
  plot(1:10)
 ```
 ````
-&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-27-1.png" width="50%" /&gt;
+&lt;img src="R-Markdown-workshop_files/figure-html/unnamed-chunk-28-1.png" width="50%" /&gt;
 
 ---
 
@@ -2437,7 +2444,11 @@ output:
 - **Hugo acadmic theme demo**: &lt;https://academic-demo.netlify.app/&gt;
 
 ## Create slide
-- **xaringan package** : &lt;https://github.com/yihui/xaringan&gt;
+- **xaringan package** :
+
+  -   &lt;https://slides.yihui.org/xaringan/#1&gt;
+  
+  -   &lt;https://github.com/yihui/xaringan&gt;
 
 - **xaringanthemer package**: &lt;https://github.com/gadenbuie/xaringanthemer&gt;
 
