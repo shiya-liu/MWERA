@@ -578,15 +578,15 @@ generation with R](https://yihui.org/knitr/options/)
 ### Options
 -   fig.show:
 
-    -   asis: display plot behind the code
+    -   asis: Show plots exactly in places where they were generated
 
-    -   hold: display plots behind the code chunk
+    -   hold: Hold all plots and output them at the end of a code chunk.
 
     -   animate: use the animate package to create the animation
 
         -   <https://bookdown.org/yihui/rmarkdown-cookbook/animation.html>
 
-    -   hide: hides the plot
+    -   hide: Generate plot files but hide them in the output document.
 
 -   fig.width and fig.height:
 
