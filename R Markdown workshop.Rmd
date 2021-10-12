@@ -808,7 +808,7 @@ title: "R Markdown Workshop"
 
 author: "Shiya"
 
-date: "2021-07-28"
+date: "`r Sys.Date()`"
 
 output:
 
@@ -838,7 +838,7 @@ title: "R Markdown Workshop"
 
 author: "Shiya"
 
-date: "2021-07-28"
+date: "`r Sys.Date()`"
 
 output:
 
@@ -858,7 +858,7 @@ title: "R Markdown Workshop"
 
 author: "Shiya"
 
-date: "2021-07-28"
+date: "`r Sys.Date()`"
 
 output:
 
@@ -875,7 +875,7 @@ title: "R Markdown Workshop"
 
 author: "Shiya"
 
-date: "2021-07-28"
+date: "`r Sys.Date()`"
 
 output:
 
