@@ -216,7 +216,7 @@ style_duo(primary_color = "#1F4257", secondary_color = "#F97B64")
 ![](Figure/20.jpg)
 ---
 
-.pull-left[![](figure/23.jpg)]
+.pull-left[![](Figure/23.jpg)]
 .pull-right[![](Figure/24.jpg)]
 
 ---
