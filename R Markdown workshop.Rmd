@@ -326,6 +326,7 @@ layout: false
 ````md      
 ```{r include=FALSE}`r ''`
  x <- sin(pi/2)
+ x
 ```
 ````
 ```{r echo=FALSE, include=FALSE}
